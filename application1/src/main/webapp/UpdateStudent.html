@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="./webpage.css">
+<title>Update Page</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Update Student Page</h1>
+				<form class="form-group" name="updateForm" method="post"
+					action="updateStudent" onsubmit="return validateForm()">
+					<table class="table table-bordered">
+						<tr>
+                            <td><label for="id">StudentId:</label></td>
+							<td><label for="firstname">Firstname:</label></td>
+							<td><label for="lastname">Lastname:</label></td>
+							<td><label for="mobileno">Mobileno:</label></td>
+							<td><label for="email">EMAIL:</label></td>
+							<td><label for="password">Password:</label></td>
+							<td><label for="repassword">Re-enter Password:</label></td>
+							<td><label for="cid">Course:</label></td>
+						</tr>
+						<tr>
+                            <td><input type="text" class="form-control" name="sid" id="sid"
+								placeholder="*STUDENTID" required></td>
+							<td><input type="text" class="form-control" name="firstname" id="firstname"
+								placeholder="*FIRSTNAME" required></td>
+							<td><input type="text" class="form-control" name="lastname" id="lastname"
+								placeholder="*LASTNAME" required></td>
+							<td><input type="text" class="form-control" name="mobileno" id="mobileno"
+								placeholder="*MOBILENO" required></td>
+							<td><input type="email" class="form-control" name="email" id="email"
+								placeholder="*EMAIL" required></td>
+							<td><input type="password" class="form-control" name="password" id="password"
+								placeholder="*PASSWORD" required></td>
+							<td><input type="password" class="form-control" name="repassword"
+								id="repassword" placeholder="*CONFIRM PASSWORD"></td>
+							<td>
+								<input type="text" class="form-control" name="cid" id="cid" placeholder="CID">
+								
+							</td>
+						</tr>
+					</table>
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Update</button>
+						<p id="p1"></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function validateForm() {
+			var name = document.getElementById("firstname").value;
+			var pwd = document.getElementById("password").value;
+			if (name == "" || pwd == "") {
+				document.getElementById("p1").innerHTML = "*Enter Mandatory Fields";
+				document.getElementById("p1").style.color = "red";
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>
